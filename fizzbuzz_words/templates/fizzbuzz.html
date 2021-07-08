@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block container %}
+    <h1> {{ title }} </h1>  
+    <ul>
+        {% for n in numbers %}
+            {% if n%3==0 and n%5==0 %}    
+            <li> {% print("Fizzbuzz")%}</li>
+            {% elif n%3==0 %}
+            <li> {% print("Fizz")%}</li>
+            {% elif n%5==0 %}
+            <li> {% print("Buzz")%}</li>
+            {% else %}
+            <li> {{ n }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}
