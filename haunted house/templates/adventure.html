@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #111111;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p, a {
+            font-size: 24px;
+        }
+
+        a {
+            color: red;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+        }
+        .img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <p>{{ text }}</p>
+
+
+        {% if choices %}
+
+            <p>What do you do?</p>
+
+            <ul>
+                {% for (page_name, choice) in choices %}
+                <li>
+                    <a href="{{url_for(page_name)}}">{{choice}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="img">
+                <img src="{{picture_url}}">
+            </div>
+
+        {% else %}
+            
+            <p>THE END.</p>
+
+            <p> <a href="{{url_for('start')}}">Play again.</a></p>
+            <div class="img">
+                <img src="{{picture_url}}">
+            </div>
+        {% endif %}
+
+
+    </div>
+</body>
+
+</html>
