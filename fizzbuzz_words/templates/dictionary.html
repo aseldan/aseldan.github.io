@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+
+{% block container %}
+    <h1> {{ title }} </h1>  
+    <h3> {{count}} words with a prefix {{prefix}} </h3>
+    <p> {{ subtitle }} </p>
+    <ul>
+        {% for key, value in dictionary.items() %}
+            <li> <a href="{{ url_for('dictionary', prefix=key) }}"> {{ key}} </a>, {{ value|length }} </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
+
+
+
