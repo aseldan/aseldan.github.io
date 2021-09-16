@@ -26,7 +26,7 @@
                 <tbody>
                     {% for supplier in suppliers %}
                     <tr>
-                        <td>{{supplier['CompanyName']}}</td>
+                        <td><a href="{{url_for('products',supplier_id=supplier['Id'])}}">{{supplier['CompanyName']}}</a></td>
                         <td>{{supplier['City']}}</td>
                         <td>{{supplier['Country']}}</td>
                     </tr>
