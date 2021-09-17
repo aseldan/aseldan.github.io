@@ -12,6 +12,7 @@
         <div class="container">
             
             <h1 class="title"> Categories</h1>
+            
             <table class="table">
                 <thead>
                     <tr>
@@ -23,7 +24,7 @@
                 <tbody>
                     {% for category in categories %}
                     <tr>
-                        <td>{{category['CategoryName']}}</td>
+                        <td><a href="{{url_for('category_products',category_id=category['Id'])}}">{{category['CategoryName']}}</a></td>
                         <td>{{category['Description']}}</td>
                         <td>{{category['ProductCount']}}</td>
                     </tr>
