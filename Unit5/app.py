@@ -12,5 +12,10 @@ def hello_world():
 def products(supplier_id):
     products = database.get_supplier_products(supplier_id)
     supplier=database.get_supplier_name(supplier_id)
-    
     return render_template('products.html', products=products, supplier=supplier) 
+
+@app.route("/category")
+def categories():
+    categories=database.get_all_categories()
+    return render_template('categories.html', categories=categories)
+
